@@ -44,16 +44,12 @@ const Sidebar = () => {
       ikon: CreditCard 
     },
     { 
-      nama: "Debts", 
-      href: "/utang-piutang?tab=hutang", 
-      ikon: ArrowUpRight 
-    },
-    { 
-      nama: "Receivables", 
-      href: "/utang-piutang?tab=piutang", 
+      nama: "Hutang & Piutang", 
+      href: "/utang-piutang", 
       ikon: ArrowDownLeft 
     },
   ];
+
 
   return (
     <div className="w-64 h-screen bg-white border-r border-gray-100 flex flex-col fixed left-0 top-0">
