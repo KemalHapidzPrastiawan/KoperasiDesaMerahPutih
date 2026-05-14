@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { 
-  FileText, 
-  Plus, 
-  CreditCard, 
-  Calendar, 
-  AlertCircle, 
-  Target, 
-  ChevronLeft, 
+import {
+  FileText,
+  Plus,
+  CreditCard,
+  Calendar,
+  AlertCircle,
+  Target,
+  ChevronLeft,
   ChevronRight,
   MoreVertical,
   CheckCircle,
@@ -27,20 +27,20 @@ import { cn, formatRupiah } from "@/lib/utils";
 export default function PinjamanPage() {
   // Data dummy untuk tabel pembayaran
   const [dataPembayaran] = useState([
-    { nama: "Agus Salim", id: "KP-2024-001", inisial: "AS", warna: "bg-blue-100", total: 10000000, sisa: 0, tgl: "15 Oct 2024", status: "Paid" },
+    { nama: "Agus Salim", id: "KP-2024-001", inisial: "AS", warna: "bg-blue-100", total: 10000000, sisa: 0, tgl: "15 Oct 2024", status: "Lunas" },
     { nama: "Siti Rahayu", id: "KP-2024-042", inisial: "SR", warna: "bg-gray-100", total: 5000000, sisa: 2500000, tgl: "28 Oct 2024", status: "Pending" },
-    { nama: "Bambang Pamungkas", id: "KP-2024-089", inisial: "BP", warna: "bg-red-100", total: 15000000, sisa: 15000000, tgl: "12 Oct 2024", status: "Overdue" },
+    { nama: "Bambang Pamungkas", id: "KP-2024-089", inisial: "BP", warna: "bg-red-100", total: 15000000, sisa: 15000000, tgl: "12 Oct 2024", status: "Terlambat" },
     { nama: "Dewi Erika", id: "KP-2024-115", inisial: "DE", warna: "bg-orange-100", total: 7500000, sisa: 3750000, tgl: "30 Oct 2024", status: "Pending" },
   ]);
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
-      
-      {/* Header Halaman */}
+
+      {/* Header Halaman - Revisi Label ke Bahasa Indonesia */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-800">Loan Payment Management</h1>
-          <p className="text-sm text-gray-400">Track, manage, and record community loan distributions and repayments.</p>
+          <h1 className="text-2xl font-bold text-gray-800">Manajemen Pembayaran Pinjaman</h1>
+          <p className="text-sm text-gray-400">Pantau, kelola, dan catat penyaluran serta angsuran pinjaman.</p>
         </div>
         <div className="flex gap-3">
           <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-xs font-bold text-gray-600 hover:bg-gray-50 transition-all shadow-sm">
@@ -49,14 +49,14 @@ export default function PinjamanPage() {
           </button>
           <button className="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg text-xs font-bold hover:bg-red-700 transition-all shadow-md shadow-red-100">
             <Plus className="w-4 h-4" />
-            New Loan
+            Pinjaman Baru
           </button>
         </div>
       </div>
 
-      {/* Grid Statistik Ringkasan */}
+      {/* Grid Statistik Ringkasan - Revisi Label ke Bahasa Indonesia */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {/* Total Active Loans */}
+        {/* Total Pinjaman Aktif */}
         <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group">
           <div className="flex justify-between items-start mb-4">
             <div className="p-2 bg-red-50 rounded-lg text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
@@ -64,11 +64,11 @@ export default function PinjamanPage() {
             </div>
             <span className="text-[9px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">+12% vs last mo</span>
           </div>
-          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Total Active Loans</p>
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Total Pinjaman Aktif</p>
           <h3 className="text-xl font-bold text-gray-800">{formatRupiah(124500000)}</h3>
         </div>
 
-        {/* Collections Today */}
+        {/* Tagihan Hari Ini */}
         <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm group">
           <div className="flex justify-between items-start mb-4">
             <div className="p-2 bg-gray-50 rounded-lg text-gray-400 group-hover:bg-red-600 group-hover:text-white transition-colors">
@@ -76,11 +76,11 @@ export default function PinjamanPage() {
             </div>
             <span className="text-[9px] font-bold text-gray-500 bg-gray-50 px-2 py-0.5 rounded-full">88% Completion</span>
           </div>
-          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Collections Today</p>
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Tagihan Hari Ini</p>
           <h3 className="text-xl font-bold text-gray-800">{formatRupiah(5250000)}</h3>
         </div>
 
-        {/* Overdue Amount */}
+        {/* Total Menunggak */}
         <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm group">
           <div className="flex justify-between items-start mb-4">
             <div className="p-2 bg-red-50 rounded-lg text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
@@ -88,16 +88,16 @@ export default function PinjamanPage() {
             </div>
             <span className="text-[9px] font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full">4 Accounts</span>
           </div>
-          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Overdue Amount</p>
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Total Menunggak</p>
           <h3 className="text-xl font-bold text-gray-800">{formatRupiah(2100000)}</h3>
         </div>
 
-        {/* Collection Target Card (Red Accent) */}
+        {/* Target Penagihan Card (Red Accent) */}
         <div className="bg-red-600 p-6 rounded-2xl shadow-xl shadow-red-100 relative overflow-hidden flex flex-col justify-between">
           <div className="relative z-10">
             <div className="flex items-center gap-2 mb-4 text-red-100/80">
               <Target className="w-4 h-4" />
-              <span className="text-[9px] font-bold uppercase tracking-widest">Collection Target</span>
+              <span className="text-[9px] font-bold uppercase tracking-widest">Target Penagihan</span>
             </div>
             <h3 className="text-xl font-bold text-white mb-2">{formatRupiah(150000000)}</h3>
           </div>
@@ -109,23 +109,22 @@ export default function PinjamanPage() {
               <div className="h-full bg-white" style={{ width: '70%' }}></div>
             </div>
           </div>
-          {/* Background pattern decor */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
         </div>
       </div>
 
-      {/* Section: Payment Ledger (Table) */}
+      {/* Section: Buku Besar Pembayaran (Table) - Revisi Label ke Bahasa Indonesia */}
       <section className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
         <div className="p-6 border-b border-gray-50 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-6">
-            <h2 className="text-sm font-bold text-gray-800">Payment Ledger</h2>
+            <h2 className="text-sm font-bold text-gray-800">Buku Besar Pembayaran</h2>
             <div className="flex bg-gray-50 p-1 rounded-xl">
-              {['All', 'Pending', 'Overdue'].map((tab) => (
-                <button 
+              {['Semua', 'Pending', 'Menunggak'].map((tab) => (
+                <button
                   key={tab}
                   className={cn(
                     "px-4 py-1.5 rounded-lg text-[10px] font-bold transition-all",
-                    tab === 'All' ? "bg-white text-gray-800 shadow-sm" : "text-gray-400 hover:text-gray-600"
+                    tab === 'Semua' ? "bg-white text-gray-800 shadow-sm" : "text-gray-400 hover:text-gray-600"
                   )}
                 >
                   {tab}
@@ -142,10 +141,10 @@ export default function PinjamanPage() {
           <table className="w-full text-left">
             <thead>
               <tr className="border-b border-gray-50 text-[10px] font-bold text-gray-400 uppercase tracking-wider">
-                <th className="px-6 py-4">Customer Name</th>
-                <th className="px-6 py-4">Loan Amount</th>
-                <th className="px-6 py-4">Remaining Balance</th>
-                <th className="px-6 py-4">Due Date</th>
+                <th className="px-6 py-4">Nama Nasabah</th>
+                <th className="px-6 py-4">Jumlah Pinjaman</th>
+                <th className="px-6 py-4">Sisa Tagihan</th>
+                <th className="px-6 py-4">Jatuh Tempo</th>
                 <th className="px-6 py-4">Status</th>
                 <th className="px-6 py-4 text-center">Actions</th>
               </tr>
@@ -170,21 +169,21 @@ export default function PinjamanPage() {
                   <td className="px-6 py-4">
                     <span className={cn(
                       "px-2 py-0.5 rounded-full font-bold text-[9px] flex items-center gap-1 w-fit",
-                      item.status === "Paid" ? "bg-green-50 text-green-600" : 
-                      item.status === "Pending" ? "bg-yellow-50 text-yellow-600" : "bg-red-50 text-red-600"
+                      item.status === "Lunas" ? "bg-green-50 text-green-600" :
+                        item.status === "Pending" ? "bg-yellow-50 text-yellow-600" : "bg-red-50 text-red-600"
                     )}>
-                      <div className={cn("w-1 h-1 rounded-full", 
-                        item.status === "Paid" ? "bg-green-600" : 
-                        item.status === "Pending" ? "bg-yellow-600" : "bg-red-600"
+                      <div className={cn("w-1 h-1 rounded-full",
+                        item.status === "Lunas" ? "bg-green-600" :
+                          item.status === "Pending" ? "bg-yellow-600" : "bg-red-600"
                       )}></div>
                       {item.status}
                     </span>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center justify-center gap-2">
-                      {item.status !== "Paid" ? (
+                      {item.status !== "Lunas" ? (
                         <button className="bg-red-600 text-white px-4 py-1.5 rounded-lg text-[10px] font-bold hover:bg-red-700 transition-all shadow-lg shadow-red-100">
-                          Record Payment
+                          Catat Bayar
                         </button>
                       ) : (
                         <button className="p-2 text-gray-400 hover:text-gray-600 transition-all">
@@ -216,7 +215,7 @@ export default function PinjamanPage() {
 
       {/* Row Bawah: Analytics & Recent Activity */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
+
         {/* Quick Payment Analytics */}
         <div className="lg:col-span-2 bg-white rounded-3xl border border-gray-100 shadow-sm p-8">
           <div className="flex justify-between items-center mb-8">
@@ -228,7 +227,7 @@ export default function PinjamanPage() {
           <div className="flex items-end justify-between h-48 gap-8 px-4">
             {[45, 55, 65, 50].map((h, i) => (
               <div key={i} className="flex-1 group relative">
-                <div 
+                <div
                   className={cn(
                     "w-full rounded-xl transition-all duration-500",
                     i === 2 ? "bg-red-600 shadow-lg shadow-red-100" : "bg-red-50 hover:bg-red-100"
@@ -242,7 +241,7 @@ export default function PinjamanPage() {
                   )}
                 </div>
                 <div className="absolute -bottom-8 left-1/2 -translate-x-1/2">
-                   <p className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Monthly Repayment Trend</p>
+                  <p className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Monthly Repayment Trend</p>
                 </div>
               </div>
             ))}
@@ -252,7 +251,7 @@ export default function PinjamanPage() {
         {/* Recent Activity */}
         <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden flex flex-col">
           <div className="p-6 border-b border-gray-50">
-            <h2 className="text-sm font-bold text-gray-800">Recent Activity</h2>
+            <h2 className="text-sm font-bold text-gray-800">Aktivitas Terbaru</h2>
           </div>
           <div className="flex-1 p-6 space-y-6">
             <div className="relative pl-8 space-y-8">
